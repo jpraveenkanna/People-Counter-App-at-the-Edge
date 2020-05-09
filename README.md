@@ -10,7 +10,7 @@ The people counter application will demonstrate a smart video IoT solution. The 
 
 <ul>
 <li>
-<p><b>OpenVINO toolkit 2019 R3</b> - To run infereance on deeplearning model</p>
+<p><b>OpenVINO toolkit 2019 R3</b> - To run inference on deeplearning model</p>
 </li>
 <li>
 <p><b>OpenCL</b> - To run on GPU (Application tested on Intel Integrated Graphics)</p>
@@ -34,7 +34,7 @@ The people counter application will demonstrate a smart video IoT solution. The 
     <p><a href="http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v2_coco_2018_03_29.tar.gz"> SSD Mobilenet V2 trained on COCO dataset </a></p>
 </li></ul>
 
-To run the model at edge. Tensorflow model is converted Intermediate Representation (IR File). This IR file is loaded to openvino inference engine for inference.
+To run the model at edge. Tensorflow model is converted to Intermediate Representation (IR File). This IR file is loaded to openvino inference engine for inference.
 <br><h5>Tensorflow Model to IR file - Conversion command:-</h5>
 <pre><code>
 sudo python /opt/intel/openvino_2019.3.376/deployment_tools/model_optimizer/mo_tf.py \
@@ -80,7 +80,7 @@ sudo python /opt/intel/openvino_2019.3.376/deployment_tools/model_optimizer/mo_t
  
   <p>
   <h4>Accuracy:</h4>
-   Openvino could able to detect more objects in some cases and the probability of the outputs are same for both tensorflow and openvino.
+   Openvino could able to detect more objects accurately in some cases and the probability of the outputs are same for both tensorflow and openvino.
    
     
   <table>
@@ -116,7 +116,7 @@ sudo python /opt/intel/openvino_2019.3.376/deployment_tools/model_optimizer/mo_t
  
  <h2><a  class="anchor" aria-hidden="true" ><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Potential Model Usecase</h2>
  <p>
-1. To ugprade an existing road or to construct a new road, road survey officers spend weeks onsite to record how many vechicles and the type of vechicle passing the road. Using the information they calculate the load/stress that the road need to withstand for a period of time. Using this model we can get much accurate result on vechicle details on road. A portable IOT device can be made for this purpose which will stream real time data.<br><br>2. In a large scale vechicle parking lots like mall parking, office vehicle parking, bus depots. This model can be used to  monitoring vehicles entering and leaving the gate. Using that it can be used to calculate free parking space realtime.<br><br>3. This model can be used to calculate average time and trend on unoccupied common office meeting rooms.
+1. To upgrade an existing road or to construct a new road, road survey officers spend weeks on road to record how many vechicles and type of vechicle passing the road. Using the information they calculate the load/stress that the road need to withstand for a period of time. Using this model we can get much accurate result on vechicle details on road. A portable IOT device can be made for this purpose which will stream real time data.<br><br>2. In a large scale vechicle parking lots like mall parking, office vehicle parking, bus depots. This model can be used to  monitoring vehicles entering and leaving the gate. Using that it can be used to calculate free parking space realtime.<br><br>3. This model can be used to calculate average time and trend on unoccupied common office meeting rooms.
 </p>
 
  <h2><a  class="anchor" aria-hidden="true" ><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Potential Effects of the Model</h2>
