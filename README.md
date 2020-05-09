@@ -43,7 +43,14 @@ sudo python /opt/intel/openvino_2019.3.376/deployment_tools/model_optimizer/mo_t
 --tensorflow_object_detection_api_pipeline_config 'ssd_mobilenet_v2_coco_2018_03_29/pipeline.config' \
 --reverse_input_channels
 </code></pre><br>
-  </p>
+ 
+ <h5>Converted IR files:-</h5>
+   <ul>
+  <li>
+    <a href="https://drive.google.com/file/d/1lUq1odM38uvKG9swI3ZM-vCNQv4_URQ8/view?usp=sharing"> frozen_inference_graph.xml </a></li><li>
+   <a href="https://drive.google.com/file/d/1eBCGrQN_RGRrWNEttn66xfmakpEsNN8i/view?usp=sharing"> frozen_inference_graph.bin </a><br>
+</li></ul>
+ </p>
 <p>Normally a deep learning model will have multiple layers each having its own activation funtion. These activation funtion are mathematical operations which will run on computation hadware like CPU or hardware accelerators like GPU,TPU,Intel Neural Stick. All operations are normally not supported by all the hardwares. </p>
 
 <p>For that purpose Openvino have custom layers which converts unsupported layers and also optimize the operation to run efficiently on specified hardware.</p>
@@ -127,3 +134,29 @@ sudo python /opt/intel/openvino_2019.3.376/deployment_tools/model_optimizer/mo_t
  <tr>
    <td align="center"><img src="/Outputs/output_video.gif"></td>
         </tr></table>
+        
+        
+ <h2><a  class="anchor" aria-hidden="true" ><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running the Application</h2>
+ <p>
+ <h5>Starting the Servers</h5>
+     <ul>
+  <li>Start MQTT server</li>
+  <li>Start Node Server for UI </li>
+ <li>Start FFPMEG server
+
+ </li></ul>
+  <h5>Start the app</h5>
+ <pre>
+ source /opt/intel/openvino/bin/setupvars.sh
+ </pre>
+   <pre> python main.py -m 'frozen_inference_graph.xml' \
+   -l '/opt/intel/openvino/deployment_tools/inference_engine/lib/intel64/libcpu_extension_avx2.so' \
+   -d 'GPU' \
+   -pt 0.1 \
+   -t 'video' \
+   -i 'resources/Pedestrian_Detect_2_1_1.mp4' | ffmpeg -v warning -f rawvideo -pixel_format bgr24 -video_size 668x432 -framerate 24 -i - http://0.0.0.0:3004/fac.ffm</pre>
+ 
+ </li>
+    </ul>
+ 
+ </p>
