@@ -145,16 +145,18 @@ sudo python /opt/intel/openvino_2019.3.376/deployment_tools/model_optimizer/mo_t
  <li>Start FFPMEG server
 
  </li></ul>
-  <h5>Start the app</h5>
+  <h5>Starting the app</h5>
+  Intialize openvino variables
  <pre>
  source /opt/intel/openvino/bin/setupvars.sh
  </pre>
+ Run the app
    <pre> python main.py -m 'frozen_inference_graph.xml' \
    -l '/opt/intel/openvino/deployment_tools/inference_engine/lib/intel64/libcpu_extension_avx2.so' \
    -d 'GPU' \
    -pt 0.1 \
    -t 'video' \
-   -i 'resources/Pedestrian_Detect_2_1_1.mp4' | ffmpeg -v warning -f rawvideo -pixel_format bgr24 -video_size 668x432 -framerate 24 -i - http://0.0.0.0:3004/fac.ffm</pre>
+   -i 'Inputs/Pedestrian_Detect_2_1_1.mp4' | ffmpeg -v warning -f rawvideo -pixel_format bgr24 -video_size 668x432 -framerate 24 -i - http://0.0.0.0:3004/fac.ffm</pre>
  
  </li>
     </ul>
