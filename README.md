@@ -1,6 +1,11 @@
 # People Counter App at the Edge
 The people counter application will demonstrate a smart video IoT solution. The app will detect people in a designated area, providing the number of people in the frame, average duration of people in frame, and total count.
 
+<table>
+ <tr>
+   <td align="center"><img src="/images/Screenshot from 2020-05-09 21-52-34.png" height=250 width=600></td>
+    <td align="center"><img src="/images/Screenshot from 2020-05-09 21-50-44.png" height=250 width=600></td>
+     </tr></table>
 <h2><a  class="anchor" aria-hidden="true" ><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Software Dependencies</h2>
 
 <ul>
@@ -70,6 +75,35 @@ sudo python /opt/intel/openvino_2019.3.376/deployment_tools/model_optimizer/mo_t
   <h4>Accuracy:</h4>
    Openvino could able to detect more objects in some cases and the probability of the outputs are same for both tensorflow and openvino.
    
+    
+  <table>
+  <tr>
+    <td align="center"><b>Input Image</b></td>
+     <td align="center"><b>Tensorflow Output</b> </td>
+     <td align="center"><b>Openvino Output</b></td>
+  </tr>
+  
+   <tr>
+    <td align="center"><img src="/Inputs/i.jpg" height=350 width=290></td>
+    <td align="center"><img src="/Outputs/i_out_tf.png" height=350 width=290></td>
+    <td align="center"><img src="/Outputs/i_openvino.jpg" height=350 width=290></td>
+    </tr>
+    <tr>
+    <td align="center"><img src="/Inputs/h.jpg" height=350 width=290></td>
+    <td align="center"><img src="/Outputs/h_out_tf.png" height=350 width=290></td>
+    <td align="center"><img src="/Outputs/h_openvino.jpg" height=350 width=290></td>
+    </tr>
+
+  
+  <tr>
+    <td align="center"><img src="/Inputs/a.jpg" height=350 width=290></td>
+    <td align="center"><img src="/Outputs/a_out_tf.png" height=350 width=290></td>
+    <td align="center"><img src="/Outputs/a_openvino.jpg" height=350 width=290></td>
+    </tr>
+ </table>
+  
+  
+    
  </p>
  
  
@@ -87,3 +121,9 @@ sudo python /opt/intel/openvino_2019.3.376/deployment_tools/model_optimizer/mo_t
 
 <b>Image size: </b><br>If the object is too close. I will be difficult to detect. And even if it detect the probability of the object will decrease steeply. If object is far away then the convolution layer reduces the image size and filters out the data. The model can only accept particular size. So if the image supplied to the model is close to this size then it will produce better result. 
 </p>
+
+ <h2><a  class="anchor" aria-hidden="true" ><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sample Output</h2>
+<table>
+ <tr>
+   <td align="center"><img src="/Outputs/output_video.gif"></td>
+        </tr></table>
